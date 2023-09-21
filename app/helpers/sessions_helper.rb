@@ -11,5 +11,5 @@ module SessionsHelper
 
   def logged_in?
     !current_user.nil?
-  ends
+  end
 end
