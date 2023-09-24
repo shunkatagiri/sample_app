@@ -23,10 +23,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def update_attribute
+  def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      #更新下に成功した場合を扱う
+      flash[:success] = "Profile updated"
+      redirect_to @user
     else
       render 'edit', status: :unprocessable_entity
     end
